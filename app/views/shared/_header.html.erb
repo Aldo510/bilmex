@@ -1,0 +1,53 @@
+<header class="header border-4 border-primary border-top position-fixed start-0 top-0 w-100">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between py-2">
+
+      <!-- Logo -->
+      <div class="logo d-flex align-items-center gap-2">
+        <%= link_to root_path, class: "logo-white d-block" do %>
+          <%= image_tag "logos/bilmexbg.png", class: "img-fluid w-25", alt: "Logo Bilmex" %>
+        <% end %>
+
+        <%= link_to root_path, class: "logo-dark d-none" do %>
+          <%= image_tag "logos/bilmexbg.png", class: "img-fluid w-25", alt: "Logo Bilmex dark", style: "filter: brightness(0) invert(1);" %>
+        <% end %>
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="btn-group">
+        <button class="btn btn-secondary p-2 d-flex align-items-center justify-content-center bg-white rounded-circle"
+                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-list fs-3 text-dark"></i>
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-end p-4">
+          <div class="d-flex flex-column gap-4">
+
+            <!-- Menu title -->
+            <div class="d-flex justify-content-between border-bottom pb-3">
+              <p class="mb-0 fs-5 fw-bold text-dark">Menú</p>
+              <button type="button" class="btn-close opacity-75"></button>
+            </div>
+
+            <!-- Menu items -->
+            <ul class="list-unstyled d-flex flex-column gap-2">
+              <%= nav_link_to "Home", root_path %>
+              <%#= nav_link_to "Sobre nosotros", about_path %>
+              <%#= nav_link_to "Proveedores", providers_path %>
+              <%#= nav_link_to "Socios", partners_path %>
+              <%#= nav_link_to "Servicios", services_path %>
+              <%#= nav_link_to "Contacto", contact_path %>
+              <%#= nav_link_to "Docs", docs_path %>
+            </ul>
+
+            <!-- Contact -->
+            <div class="d-flex flex-column gap-1">
+              <%= link_to "+1-212-456-7890", "tel:+1-212-456-7890", class: "text-dark fw-semibold" %>
+              <%= mail_to "contacto@bilmex.com", "contacto@bilmex.com", class: "text-dark fw-semibold fs-6" %>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
